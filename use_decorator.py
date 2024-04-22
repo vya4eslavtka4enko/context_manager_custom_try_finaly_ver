@@ -11,3 +11,13 @@ def open_db(file_name):
     finally:
         connection.commit()
         connection.close()
+        
+        
+def main():
+    logging.basicConfig(level=logging.INFO)
+    with open_db(file_name="database.db") as cursor:
+        cursor.execute("SELECT * FROM **")
+        logging.info(cursor.fetchall())
+        
+if __name__ == "__main__":
+    main()
